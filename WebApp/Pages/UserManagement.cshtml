@@ -1,0 +1,346 @@
+﻿@page
+@model WebApp.Pages.ServiceManagmentModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="~/assets/2_logosimecid.png" type="image/x-icon" />
+    <title>SimecidApp</title>
+    <link href="/css/user-management.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
+    <script src="~/js/controlactions.js"></script>
+    <script src="~/js/pages/usermanagment.js"></script>
+</head>
+
+<!------- SIDEBAR ------>
+<div class="sidebar">
+    <!------- Logo y titulo ------>
+    <div class="containerLogo">
+        <img src="~/Assets/LogoSIMECID.png" class="logoMini" />
+    </div>
+    <!------- Icono y nombre del usuario, e icono de settings------>
+    <div class="containerUser">
+        <!--Boton para ver el perfil de usuario (no es lo mismo que gestion de users)-->
+        <form asp-page="/UserProfile">
+            <button class="buttonUser">
+                <img src="~/assets/defaultpictureprofile.png" class="userIcon" />
+                <div class="fontTitle userName">Profile</div>
+            </button>
+        </form>
+        <!--Boton para ir a los settings-->
+        <form asp-page="/AdminSettings">
+            <button class="buttonSettings">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-gear-fill settingsIcon" viewBox="0 0 16 16">
+                    <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                </svg>
+            </button>
+        </form>
+    </div>
+
+    <div class="MainMenu">
+        <form asp-page="/AppointmentManager">
+            <button class="buttonMenu" id="appointmentsMenuId">Appointments</button>
+        </form>
+        <form asp-page="/ServiceManagment">
+            <button class="buttonMenu" id="servicesMenuId">Services</button>
+        </form>
+        <form asp-page="/BranchManagment">
+            <button class="buttonMenu" id="branchesMenuId">Branches</button>
+        </form>
+        <form asp-page="/UserManagement">
+            <button class="buttonMenu" id="">Users</button>
+        </form>
+        <form asp-page="/">
+            <button class="buttonMenu" id="paymentMenuId">Payment</button>
+        </form>
+        <form asp-page="/ExaminationManagment">
+            <button class="buttonMenu" id="examinationMenuId">Examination</button>
+        </form>
+        <form asp-page="/PrescriptionManagment">
+            <button class="buttonMenu" id="prescriptionsMenuId">Prescriptions</button>
+        </form>
+        <form asp-page="/MedicalReportManagment">
+            <button class="buttonMenu" id="medicalReportMenuId">Medical Report</button>
+        </form>
+        <div class="sidebarFooter">2024 Codecrafters All Right Reserved to </div>
+    </div>
+
+</div>
+
+<body>
+    <div class="main-content">
+
+        <div class="profileHeader">
+        </div>
+        <div class="container1">
+            <h1 style="margin-left:30%" class="title1">User Managment</h1>
+        </div>
+
+        <div class="container2" style="width: 85%;">
+            <h1 class="title2" style="margin-left:32%">User List</h1>
+
+            <div class="row" style="margin-left: 5%">
+                <div class="col-lg-12">
+                    <table id="tblUserInfo" class="table table-hover" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Last Name</th>
+                                <th>PhoneNumber</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Province</th>
+                                <th>Address</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="container2" style="margin-left:47%">
+            <h1 class="details">User details</h1>
+
+            <div class="form">
+                <form action="/action_page.php">
+                    <div class="form-field">
+                        <label for="id">Id</label>
+                        <input type="text" id="id" name="id" value="">
+                    </div>
+                    <div class="form-field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" value="">
+                    </div>
+                    <div class="form-field">
+                        <label for="name">Last Name</label>
+                        <input type="text" id="lastName" name="last-name" value="">
+                    </div>
+                    <div class="form-field">
+                        <label for="phone-number" style="text-align:left">Phone Number</label>
+                        <input type="text" id="phoneNumber" name="phone-number" value="">
+                    </div>
+                    <div class="form-field">
+                        <label class="email" for="email">Email</label>
+                        <input type="text" id="email" name="email" value="">
+                    </div>
+                    <div class="form-field">
+                        <label for="role">Role</label><br>
+                        <select class="password" id="sex" name="role" style="width: 20vw; height: 3vh;" required>
+                            <option value="" disabled selected hidden></option>
+                            <option value="User">User</option>
+                            <option value="Doctor">Doctor</option>
+                            <option value="Nurse">Nurse</option>
+                            <option value="Secretary">Secretary</option>
+                        </select><br><br>
+                    </div>
+                    <div class="form-field">
+                        <label for="province">Province</label><br>
+                        <select class="password" id="province" name="province" style="width: 30vw; height: 3vh;" required>
+                            <option value="" disabled selected hidden>Select your province</option>
+                            <option value="San José">San José</option>
+                            <option value="Alajuela">Alajuela</option>
+                            <option value="Heredia">Heredia</option>
+                            <option value="Cartago">Cartago</option>
+                            <option value="Puntarenas">Puntarenas</option>
+                            <option value="Guanacaste">Guanacaste</option>
+                            <option value="Limón">Limón</option>
+                        </select><br><br>
+                    </div>
+                    <div class="form-field">
+                        <label for="address">Address</label><br>
+                        <textarea class="password" id="address" name="address" required style="width: 600px; height: 48px;"></textarea>
+                    </div>
+                        <div class="form-buttons" style="margin-right: 100px">
+                        <button class="button" id="btnUpdate" type="button" style="margin-left:100px">Update</button>
+                        <button class="button" id="btnDelete" type="button">Delete</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="container1" style="margin-left:44%">
+            <h1 class="details">Employee Managment</h1>
+            <div class="form">
+                <form action="/action_page.php">
+                    <div class="form-field">
+                        <label for="employees">Employees</label>
+                        <select class="password" id="role" name="role" style="width: 20vw; height: 3vh;" required>
+                            
+                            
+                            <option value="Doctor">Doctor</option>
+                            <option value="Nurse">Nurse</option>
+                            <option value="Secretary">Secretary</option>
+                        </select><br><br>
+                     </div>
+                </form>
+            </div>
+        </div>
+
+        <div style="width:85%" class="container2">
+
+            <div class="row" style="margin-left: 5%%">
+                <div class="col-lg-12">
+                    <table id="tblUserRole" class="table table-hover" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Last Name</th>
+                                <th>PhoneNumber</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Province</th>
+                                <th>Address</th>
+                                <th>Branch Id</th>
+                                <th>Schedule</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="container2" style="margin-left:45%">
+            <div class="form">
+                <form action="/action_page.php">
+                    <div class="form-field">
+                        <label for="employeeId">Employee <br /> id</label>
+                        <input type="text" id="employeeId" name="employeeId" value="">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="employeeName">Employee name</label>
+                        <input type="text" id="employeeName" name="employeeName" value="">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="employeeLastName">Employee last name</label>
+                        <input type="text" id="employeeLastName" name="employeeLastName" value="">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="employeeEmail">Employee Email</label>
+                        <input type="email" class="password" id="employeeEmail" name="email" value="">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="branchSelect">Branch</label>
+                        <select id="branchSelect" class="formularyform password">
+                            <option value="" disabled selected hidden></option>
+                            <!-- Aquí puedes agregar las opciones de las sucursales desde tu base de datos -->
+                            <!-- Agrega más opciones según sea necesario -->
+                        </select>
+                    </div>
+
+                  
+                    <div class="form-field">
+                        <label for="role">Schedule</label><br>
+                        <select class="password" id="schedule" name="schedule" style="width: 1vw; height: 3vh;" required>
+                            <option value="" disabled selected hidden></option>
+                            <option value="Horario Completo">Lunes a viernes. de 8:00 a.m. a 6:00 p.m.</option>
+                            <option value="Medio Tiempo 1">Medio Tiempo 1: Lunes a viernes de 7:00 a.m. a 12:00 p.m.</option>
+                            <option value="Medio Tiempo 2">Medio Tiempo 1: Lunes a viernes de 1:00 p.m. a 7:00 p.m.</option>
+                            <option value="Nocturno">Nocturno: Lunes a viernes de 7:00 p.m. a 7:00 a.m.</option>
+                            <option value="Fin de Semana día">Fin de Semana día: Sábados y domingos de 7:00 a.m. a 6:00 p.m.</option>
+                            <option value="Fin de Semana noche">Fin de Semana noche: Sábados y domingos de 6:00 p.m. a 7:00 a.m.</option>
+                        </select><br><br>
+                    </div>
+
+                    <div class="form-buttons" style="margin-right: 50%">
+                        <button class="button" id="btnEmployee" type="button" style="margin-left:100px">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div style="width:85%" class="container2">
+            <h1 style="margin-left: 18%;" class="details">Add Doctor Speciality</h1>
+
+            <div class="row" style="margin-left: -3%">
+                <div class="col-lg-12">
+                    <table id="tblDoctorInfo" class="table table-hover" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Specialty</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="container2" style="margin-left:45%">
+
+            <div class="form">
+                <form action="/action_page.php">
+                    <div class="form-field">
+                        <label for="doctorId">Doctor Id <br /> id</label>
+                        <input type="text" id="doctorId" name="doctorId" value="">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="doctorName">Doctor Name</label>
+                        <input type="text" id="doctorname" name="doctorName" value="">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="doctorLastName">Doctor Last Name</label>
+                        <input type="text" id="doctorLastName" name="doctorLastName" value="">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="doctorEmail">Doctor Email</label>
+                        <input type="email" class="password" id="doctorEmail" name="doctorEmail" value="">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="specialty">Specialty</label><br>
+                        <select class="password" id="doctorSpecialty" name="doctorSpecialty" style="width: 1vw; height: 3vh;" required>
+                            <option value="">Select a specialty</option>
+                            <option value="Anesthesiology">Anesthesiology</option>
+                            <option value="Cardiology">Cardiology</option>
+                            <option value="Dermatology">Dermatology</option>
+                            <option value="Endocrinology">Endocrinology</option>
+                            <option value="Gastroenterology">Gastroenterology</option>
+                            <option value="Geriatrics">Geriatrics</option>
+                            <option value="Gynecology and Obstetrics">Gynecology and Obstetrics</option>
+                            <option value="Emergency Medicine">Emergency Medicine</option>
+                            <option value="Internal Medicine">Internal Medicine</option>
+                            <option value="Neurology">Neurology</option>
+                            <option value="Ophthalmology">Ophthalmology</option>
+                            <option value="Otorhinolaryngology">Otorhinolaryngology</option>
+                            <option value="Pediatrics">Pediatrics</option>
+                        </select><br><br>
+                    </div>
+
+                    <div class="form-buttons" style="margin-right: 100px">
+                        <button class="button" id="btnSpecialty" type="button" style="margin-left:100px">Update</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+           
+
+     </div>
+
+</body>
+</html>

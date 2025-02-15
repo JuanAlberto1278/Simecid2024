@@ -1,0 +1,9 @@
+﻿img {
+    position: relative;
+}
+
+body, html {
+    background-image: url('../assets/simecid_background2.png');
+    font-weight: 900;
+}
+

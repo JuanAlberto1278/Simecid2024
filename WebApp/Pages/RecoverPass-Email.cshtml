@@ -1,0 +1,60 @@
+﻿@page
+@model WebApp.Pages.RecoverPass_EmailModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/controlactions.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/mailer.js"></script>
+    <link rel="stylesheet" href="/css/enterEmail.css" />
+    <title>SimecidApp</title>
+</head>
+<body>
+    <div class="container">
+        <div class="split left">
+            <footer>
+                <p>&copy; 2024 CodeCrafters. All rights reserved.</p>
+            </footer>
+        </div>
+
+        <div class="split right">
+            <span class="topSignUp">
+                <img src="/Assets/logo-white.png" />
+                <h1>SIMECID</h1>
+            </span>
+            <h2>
+                Recover your
+                password
+            </h2>
+            <form id="entEmail">
+                <span class="txtLabel1">
+                    <p>Enter your email address</p>
+                </span>
+                <input class="emailTxt" type="email" id="email" name="email" required>
+
+                @* <a class="btn" style="margin-left: 350px;" asp-area="" asp-page="/RecoverPassword">Try</a> *@
+
+                <button class="btn" type="button" id="btnTry" style="margin-left: 350px;">Try</button>
+            </form>
+
+            @* <form asp-page="/RecoverPassword">
+                <button class="btn" id="btnTry" style="margin-left: 350px;">Try</button>
+            </form> *@
+            
+        </div>
+    </div>
+</body>
+</html>

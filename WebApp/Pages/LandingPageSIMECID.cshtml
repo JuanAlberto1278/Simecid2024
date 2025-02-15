@@ -1,0 +1,240 @@
+﻿@page
+@model WebApp.Pages.LandingPageSIMECIDModel
+@{
+    Layout = null;
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="~/css/landingpagesimecid.css" rel="stylesheet" />
+    <title>SimecidApp</title>
+    <link href="~/css/landingpagesimecid.css" rel="stylesheet" />
+    <script src="~/js/sign-in.js"></script>
+    <script src="~/js/landing.js"></script>
+</head>
+
+<header>
+    <div class="header">
+        <ul>
+            <li><a href="#about" class="li-header">About the app</a></li>
+            <li><a href="#FAQ" class="li-header">FAQ</a></li>
+        </ul>
+        <div class="ContLogoHeader"><img class="LogoSimecidHeader" src="~/assets/logosimecid.png" /> </div>
+        <form asp-page="/Login">
+            <button style="cursor:pointer" type="submit" class="loginBtnHeader">Log in</button>
+        </form>
+        @* <a class="loginBtnHeader" asp-area="" asp-page="/Login">Log in</a> *@
+    </div>
+</header>
+
+
+<body>
+    <div class="Cont-General-Primera-Capa">
+        <div class="SubCont-Primera-Capa-ParteIzquierda">
+            <img class="Img-PrimeraCapa" src="~/assets/3_doctor_taking_notes.png">
+            <p class="Txt-PrimeraCapa-ParteIzquierda">Make your <br> medical appointments <br>with ease</p>
+        </div>
+        <div class="SubCont-Primera-Capa-ParteDerecha">
+            <p class="Txt-PrimeraCapa-ParteDerecha">Simplify your health with our <br> efficient medical <br> appointment app.</p>
+            <form asp-page="/SignUp">
+                <button style="cursor:pointer" class="Btn-SingUp-PrimeraCapa" id="signUpBtn" type="click">Sign up</button>
+            </form>
+           @*  <a class="Btn-SingUp-PrimeraCapa" asp-area="" asp-page="/SignUp">Sign up</a> *@
+        </div>
+    </div>
+
+    <div id="about" class="Cont-General-Segunda-Capa">
+        <div class="Sub-Cont-Segunda-Capa-ParteIaquierda">
+            <img class="Img-SegundaCapa" src="~/assets/estetoscopio.png" alt="">
+        </div>
+        <div class="Sub-Cont-Segunda-Capa-ParteDerecha">
+            <h1 class="H1-SegundaCapa">About the App</h1>
+            <p class="P-SegundaCapa">"Our medical appointment app is designed to streamline the appointment <br> scheduling and management process for both patients and healthcare providers. <br> With our easy-to-use interface, patients can easily book appointments, receive <br> reminders, and access their medical records Healthcare providers can efficiently <br> manage their schedules, track patient information, and provide the best service. <br> Experience the convenience and efficiency of our app today!"</p>
+        </div>
+    </div>
+
+    <!--CAPA DE LOS KEY BENEFITS-->
+    <div class="Cont-General-Tercera-Capa">
+        <div class="Sub-Cont-Titulo-Tercera-Capa">
+            <h1 class="H1-Titulo-TerceraCapa">Key Benefits</h1>
+        </div>
+        <div class="Sub-Cont-PrimerCuadro-Tercera-Capa">
+            <h1 class="H1-TerceraCapa-PrimerCuadro">Efficient Medical <br> Management</h1>
+            <p class="P-TerceraCapa-PrimerCuadro">Streamline your medical practice with our intuitive appointment scheduling and patient management tools.</p>
+        </div>
+        <div class="Sub-Cont-SegundoCuadro-Tercera-Capa">
+            <h1 class="H1-TerceraCapa-SegundoCuadro">Data Security</h1>
+            <p class="P-TerceraCapa-SegundoCuadro">Rest easy knowing that your patients' sensitive information is protected with state-of-the-art security measures.</p>
+        </div>
+        <div class="Sub-Cont-TercerCuadro-Tercera-Capa">
+            <h1 class="H1-TerceraCapa-TercerCuadro">Improved Patient Experience</h1>
+            <p class="P-TerceraCapa-TercerCuadro">Enhance patient satisfaction with our user-friendly interface and convenient online appointment booking.</p>
+        </div>
+        <div class="Sub-Cont-CuartoCuadro-Tercera-Capa">
+            <h1 class="H1-TerceraCapa-CuartoCuadro">Time and Cost Savings</h1>
+            <p class="P-TerceraCapa-CuartoCuadro">Save time and reduce administrative costs by automating repetitive tasks and eliminating paperwork.</p>
+        </div>
+        <div class="Sub-Cont-QuintoCuadro-Tercera-Capa">
+            <h1 class="H1-TerceraCapa-QuintoCuadro">Integrated Communication</h1>
+            <p class="P-TerceraCapa-QuintoCuadro">Stay connected with your patients through secure messaging and telehealth features, improving communication and accessibility.</p>
+        </div>
+    </div>
+
+    <div class="Cont-General-Cuarta-Capa">
+        <div class="SubCont-Cuarta-Capa-ParteIzquierda">
+            <img class="Img-CuartaCapa" src="~/assets/calendar.png" alt="">
+        </div>
+        <div class="SubCont-Cuarta-Capa-ParteDerecha">
+            <h1 class="H1-CuartaCapa">Quick access to <br> medical care</h1>
+            <p class="P-CuartaCapa">In a world where time is crucial and health is <br> paramount, what could be more valuable <br> than quick and easy access to healthcare <br> when you need it most? With our SIMECID <br> app, we have redefined the way you access <br> healthcare, putting control directly in your hands.</p>
+        </div>
+    </div>
+
+    <!--CAPA DE TESTIMONIOS-->
+    <div class="Cont-General-Quinta-Capa">
+
+        <div class="SubCont-Quinta-Capa-ParteIzquierda">
+
+            <div class="MiniCont-H1-P-QuintaCapa">
+                <h1 class="H1-Principal-QuintaCapa">What our users are <br> saying</h1>
+                <p class="P-Principal-QuintaCapa">Read what our satisfied users have to say about our medical <br> appointment app.</p>
+            </div>
+
+            <div class="MiniCont-PrimerCuadro-QuintaCapa">
+                <div class="SubCont-Img-H1-PrimerCuadro">
+                    <img class="Img-PrimerCuadro-QuintaCapa" src="~/assets/1st_man.png" alt="">
+                    <h1 class="H1-PrimerCuadro-QuintaCapa">John Smith</h1>
+                </div>
+                <p class="P-PrimerCuadro-QuintaCapa">I love how easy it is to book appointments with this app. It saves me so much time!</p>
+            </div>
+
+            <div class="MiniCont-SegundoCuadro-QuintaCapa">
+                <div class="SubCont-Img-H1-SegundoCuadro">
+                    <img class="Img-SegundoCuadro-QuintaCapa" src="~/assets/1st_girl.png" alt="">
+                    <h1 class="H1-SegundoCuadro-QuintaCapa">Emily Johnson</h1>
+                </div>
+                <p class="P-SegundoCuadro-QuintaCapa">This app has made managing my medical appointments a breeze. Highly recommended!</p>
+            </div>
+
+            <div class="MiniCont-TercerCuadro-QuintaCapa">
+                <div class="SubCont-Img-H1-TercerCuadro">
+                    <img class="Img-TercerCuadro-QuintaCapa" src="~/assets/2nd_man.png" alt="">
+                    <h1 class="H1-TercerCuadro-QuintaCapa">Michael Davis</h1>
+                </div>
+                <p class="P-TercerCuadro-QuintaCapa">I've been using this app for a few months now and it has completely transformed the way I schedule my appointments. It's a game-changer!</p>
+            </div>
+
+            <div class="MiniCont-CuartoCuadro-QuintaCapa">
+                <div class="SubCont-Img-H1-CuartoCuadro">
+                    <img class="Img-CuartoCuadro-QuintaCapa" src="~/assets/2nd_girl.png" alt="">
+                    <h1 class="H1-CuartoCuadro-QuintaCapa">Sarah Thompson</h1>
+                </div>
+                <p class="P-CuartoCuadro-QuintaCapa">The user interface of this app is so intuitive and user-friendly. It's a pleasure to use!</p>
+            </div>
+
+            <div class="MiniCont-QuintoCuadro-QuintaCapa">
+                <div class="SubCont-Img-H1-QuintoCuadro">
+                    <img class="Img-QuintoCuadro-QuintaCapa" src="~/assets/3rd_man.png" alt="">
+                    <h1 class="H1-QuintoCuadro-QuintaCapa">David Wilson</h1>
+                </div>
+                <p class="P-QuintoCuadro-QuintaCapa">I can't imagine going back to the old way of scheduling appointments after using this app. It's so convenient!</p>
+            </div>
+
+        </div>
+
+        <div class="SubCont-Quinta-Capa-Parte-Derecha">
+            <img class="Img-ParteDerecha-QuintaCapa" src="~/assets/test_estetoscopio.png" alt="">
+        </div>
+
+    </div>
+
+    <div id="FAQ" class="Cont-General-Sexta-Capa">
+        <div class="SubCont-TituloGeneral-SextaCapa">
+            <h1 class="H1-TituloGeneral-SextaCapa">FAQ</h1>
+        </div>
+        <div class="Sub-Cont-PrimerCuadro-Sexta-Capa">
+            <h1 class="H1-PrimerCuadro-SextaCapa">How do I schedule a medical appointment?</h1>
+            <p class="P-PrimerCuadro-SextaCapa">To schedule a medical appointment, simply log in to your account and navigate to the appointments section. From there, you can choose a date and time that works for you and select a healthcare provider. Once you've made your selection, confirm the appointment and you're all set!</p>
+        </div>
+        <div class="Sub-Cont-SegundoCuadro-Sexta-Capa">
+            <h1 class="H1-SegundoCuadro-SextaCapa">Can I cancel or reschedule my appointment?</h1>
+            <p class="P-SegundoCuadro-SextaCapa">Yes, you can cancel or reschedule your appointment. Just go to the appointments section in your account and find the appointment you want to change. Click on the 'Cancel' or 'Reschedule' button and follow the prompts to make the necessary changes.</p>
+        </div>
+        <div class="Sub-Cont-TercerCuadro-Sexta-Capa">
+            <h1 class="H1-TercerCuadro-SextaCapa">Is my personal information secure?</h1>
+            <p class="P-TercerCuadro-SextaCapa">Yes, we take the security of your personal information very seriously. We have implemented strict measures to ensure that your data is protected and kept confidential. We use encryption technology to safeguard your information and regularly update our systems to stay ahead of any potential threats.</p>
+        </div>
+        <div class="Sub-Cont-CuartoCuadro-Sexta-Capa">
+            <h1 class="H1-CuartoCuadro-SextaCapa">What types of healthcare providers are available on the app?</h1>
+            <p class="P-CuartoCuadro-SextaCapa">Our app provides access to a wide range of healthcare providers, including doctors, specialists, therapists, and more. You can search for providers based on their specialty, location, and availability. We strive to offer a diverse network of providers to meet the unique needs of our users.</p>
+        </div>
+        <div class="Sub-Cont-QuintoCuadro-Sexta-Capa">
+            <h1 class="H1-QuintoCuadro-SextaCapa">How can I contact customer support?</h1>
+            <p class="P-QuintoCuadro-SextaCapa">If you have any questions or need assistance, our customer support team is here to help. You can reach us by filling out the contact form on our website or by sending an email to support@example.com. We aim to respond to all inquiries within 24 hours.</p>
+        </div>
+    </div>
+
+    <div class="Cont-General-Septima-Capa">
+        <div class="SubCont-TituloGeneral-Septima">
+            <h1 class="H1-TituloGeneral-SeptimaCapa">FAQ</h1>
+        </div>
+        <div class="Sub-Cont-PrimerCuadro-Septima-Capa">
+            <h1 class="H1-PrimerCuadro-SeptimaCapa">Welcome to our Medical Appointment App</h1>
+            <form asp-page="/SignUp">
+                <button style="cursor:pointer" class="Btn-Cuadro-SeptimaCapa">Sign Up Now</button>
+            </form>
+            @* <a class="Btn-Cuadro-SeptimaCapa" asp-area="" asp-page="/SignUp">Sign Up Now</a> *@
+        </div>
+    </div>
+
+    <div class="Cont-General-Octava-Capa">
+        <div class="SubCont-TituloGeneral-OctavaCapa">
+            <h1 class="H1-TituloGeneral-OctavaCapa">Social Media Links</h1>
+        </div>
+        <div class="SubCont-SocialMedias-OctavaCapa">
+            <div class="MiniCont-Facebook">
+                <h1>Facebook</h1>
+                <p>facebook.com/SIMECID</p>
+            </div>
+            <div class="MiniCont-Instagram">
+                <h1>Instagram</h1>
+                <p>instagram.com/SIMECID</p>
+            </div>
+            <div class="MiniCont-Twitter">
+                <h1>Twitter</h1>
+                <p>twitter.com/SIMECID</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+<footer>
+    <div class="left">
+        <img src="~/assets/logosimecidenano.png" alt="SIMECID Logo">
+        <nav>
+            <ul>
+                <li><a href="#about">About the app</a></li>
+                <li><a href="#FAQ">FAQ</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="right">
+        Download now
+        <div class="download-buttons">
+            <img class="Img-AppStore-Footer" src="~/assets/appstorelogo.jpg" alt="Download on the App Store">
+            <img class="Img-AppStore-Footer" src="~/assets/google_playlogo.png" alt="Get it on Google Play">
+        </div>
+    </div>
+
+    <p>&copy;2024 Codecrafters All Right Reserved to</p>
+</footer>
+
+</html>
+

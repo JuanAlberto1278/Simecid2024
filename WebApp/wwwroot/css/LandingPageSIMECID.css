@@ -1,0 +1,884 @@
+
+
+body {
+    margin-bottom: 60px;
+    background-color: #ffffff; /* Color de fondo blanco */
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+    font-size: 16px; /* Tamaño de fuente predeterminado */
+    margin: 0; /* Elimina los márgenes predeterminados */
+    padding: 0; /* Elimina el padding predeterminado */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 50px;
+    background-color: white;
+}
+
+    .header ul {
+        list-style-type: none;
+    }
+
+    .header li {
+        display: inline;
+        margin-right: 40px;
+    }
+
+.li-header-home {
+    margin-left: -25px;
+}
+
+.ContLogoHeader {
+    margin-right: 80px;
+}
+
+.LogoSimecidHeader {
+    width: 500px;
+    height: 100px;
+    margin-left: -100px;
+}
+
+.loginBtnHeader {
+    border: 2px solid #ccc; /* Bordados grises */
+    border-radius: 50px; /* Radio de 50 para los bordes */
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    width: 112px;
+    height: 41px;
+    display: inline-block; /* Hace que el botón se comporte como un bloque en línea */
+    text-align: center; /* Centra el texto dentro del botón */
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+/* Estilos para los enlaces del encabezado */
+.li-header {
+    text-decoration: none; /* Quita el subrayado predeterminado */
+    color: #333; /* Color del texto */
+    font-size: 20px; /* Tamaño del texto */
+    font-weight: bold; /* Peso de la fuente */
+    margin-right: 20px; /* Espacio entre los elementos */
+    transition: color 0.3s; /* Transición suave del color */
+}
+
+    /* Cambio de color al pasar el cursor */
+    .li-header:hover {
+        color: #007bff; /* Cambia el color del texto al pasar el cursor */
+    }
+
+
+.Cont-General-Primera-Capa {
+    display: flex;
+    margin-top: 30px;
+    width: 100%;
+}
+
+
+.SubCont-Primera-Capa-Img-Izquierda {
+    width: 100%;
+}
+
+.Img-PrimeraCapa {
+    width: 1200px; /* El ancho de la imagen será la mitad del contenedor */
+    height: 598px; /* La altura se ajustará automáticamente para mantener la proporción original */
+    margin-left: -94px;
+}
+
+.Txt-PrimeraCapa-ParteIzquierda {
+    position: absolute;
+    top: 45%;
+    left: 27%;
+    transform: translate(-50%, -50%);
+    color: white; /* Color del texto */
+    font-size: 70px; /* Tamaño del texto */
+    font-weight: bold; /* Peso de la fuente */
+    text-align: left; /* Alineación del texto */
+    padding: 10px; /* Espacio interior del texto */
+}
+
+
+.SubCont-Primera-Capa-ParteDerecha {
+    background-color: #02B1A9;
+    width: 100%;
+    margin-left: -94px;
+}
+
+.Txt-PrimeraCapa-ParteDerecha {
+    color: white;
+    font-size: 40px; /* Tamaño del texto */
+    text-align: left; /* Alineación del texto */
+    margin-left: 50px;
+    margin-top: 200px;
+}
+
+.Btn-SingUp-PrimeraCapa {
+    border: 2px solid white; /* Bordados grises */
+    border-radius: 50px; /* Radio de 50 para los bordes */
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    width: 112px;
+    height: 41px;
+    display: inline-block; /* Hace que el botón se comporte como un bloque en línea */
+    text-align: center; /* Centra el texto dentro del botón */
+    margin-left: 55px;
+    margin-top: 25px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.Cont-General-Segunda-Capa {
+    display: flex;
+    margin-top: 60px;
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 200px;
+}
+
+.Sub-Cont-Segunda-Capa-ParteIaquierda {
+    width: 100%;
+}
+
+.Img-SegundaCapa {
+    width: 700px;
+    height: 450px;
+    margin-left: 50px;
+}
+
+.Sub-Cont-Segunda-Capa-ParteDerecha {
+    width: 100%;
+    margin-left: -94px;
+}
+
+.H1-SegundaCapa {
+    color: #1F95A1; /* Color del texto */
+    font-size: 70px; /* Tamaño del texto */
+    font-weight: bold; /* Peso de la fuente */
+    text-align: left; /* Alineación del texto */
+    padding: 10px; /* Espacio interior del texto */
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.P-SegundaCapa {
+    color: black; /* Color del texto */
+    font-size: 20px; /* Tamaño del texto */
+    text-align: left; /* Alineación del texto */
+    padding: 1; /* Espacio interior del texto */
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.Cont-General-Tercera-Capa {
+    background-color: #02B1A9;
+    text-align: center;
+    height: 1770px;
+   /* display: flex;*/
+}
+.Flex1-Tercera-Capa {
+    width: 50%;
+}
+.Flex2-Tercera-Capa {
+    width: 50%;
+}
+
+.Sub-Cont-Titulo-Tercera-Capa {
+    padding: 10px; /* Espacio interior del texto */
+    text-align: center;
+    width: 80%;
+}
+
+.H1-Titulo-TerceraCapa {
+    color: white; /* Color del texto */
+    font-size: 60px; /* Tamaño del texto */
+    font-weight: bold; /* Peso de la fuente */
+    padding: 10px; /* Espacio interior del texto */
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+    margin-top: 50px;
+}
+
+.Sub-Cont-PrimerCuadro-Tercera-Capa {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    margin-left: 700px;
+    width: 500px;
+    text-align: left;
+}
+
+.H1-TerceraCapa-PrimerCuadro {
+    color: #1F95A1; /* Color del texto */
+    font-size: 40px; /* Tamaño del texto */
+    font-weight: bold; /* Peso de la fuente */
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.P-TerceraCapa-PrimerCuadro {
+    color: black; /* Color del texto */
+    font-size: 20px; /* Tamaño del texto */
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.Sub-Cont-SegundoCuadro-Tercera-Capa {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    margin-left: 700px;
+    margin-top: 40px;
+    width: 500px;
+    text-align: left;
+}
+
+.H1-TerceraCapa-SegundoCuadro {
+    color: #1F95A1; /* Color del texto */
+    font-size: 40px; /* Tamaño del texto */
+    font-weight: bold; /* Peso de la fuente */
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.P-TerceraCapa-SegundoCuadro {
+    color: black; /* Color del texto */
+    font-size: 20px; /* Tamaño del texto */
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.Sub-Cont-TercerCuadro-Tercera-Capa {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    margin-left: 700px;
+    margin-top: 40px;
+    width: 500px;
+    text-align: left;
+}
+
+.H1-TerceraCapa-TercerCuadro {
+    color: #1F95A1; /* Color del texto */
+    font-size: 40px; /* Tamaño del texto */
+    font-weight: bold; /* Peso de la fuente */
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.P-TerceraCapa-TercerCuadro {
+    color: black; /* Color del texto */
+    font-size: 20px; /* Tamaño del texto */
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.Sub-Cont-CuartoCuadro-Tercera-Capa {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    margin-left: 700px;
+    margin-top: 40px;
+    width: 500px;
+    text-align: left;
+}
+
+.H1-TerceraCapa-CuartoCuadro {
+    color: #1F95A1; /* Color del texto */
+    font-size: 40px; /* Tamaño del texto */
+    font-weight: bold; /* Peso de la fuente */
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.P-TerceraCapa-CuartoCuadro {
+    color: black; /* Color del texto */
+    font-size: 20px; /* Tamaño del texto */
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.Sub-Cont-QuintoCuadro-Tercera-Capa {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    margin-left: 700px;
+    margin-top: 40px;
+    width: 500px;
+    text-align: left;
+}
+
+.H1-TerceraCapa-QuintoCuadro {
+    color: #1F95A1; /* Color del texto */
+    font-size: 40px; /* Tamaño del texto */
+    font-weight: bold; /* Peso de la fuente */
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.P-TerceraCapa-QuintoCuadro {
+    color: black; /* Color del texto */
+    font-size: 20px; /* Tamaño del texto */
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.Cont-General-Cuarta-Capa {
+    display: flex;
+    margin-top: px;
+    width: 100%;
+}
+
+.Img-CuartaCapa {
+    width: 1000px; /* El ancho de la imagen será la mitad del contenedor */
+    height: 598px; /* La altura se ajustará automáticamente para mantener la proporción original */
+    margin-left: -80px;
+}
+
+.SubCont-Cuarta-Capa-ParteDerecha {
+    background-color: #1F95A1;
+    width: 100%;
+    margin-left: -78px;
+}
+
+.H1-CuartaCapa {
+    color: white;
+    font-size: 60px; /* Tamaño del texto */
+    text-align: left; /* Alineación del texto */
+    margin-left: 150px;
+    margin-top: 130px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.P-CuartaCapa {
+    color: white;
+    font-size: 27px; /* Tamaño del texto */
+    text-align: left; /* Alineación del texto */
+    margin-left: 150px;
+    margin-top: 50px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.Cont-General-Quinta-Capa {
+    display: flex;
+    margin-top: 100px;
+    width: 100%;
+}
+
+.SubCont-Quinta-Capa-ParteIzquierda {
+    margin-left: 100px;
+}
+
+.MiniCont-H1-P-QuintaCapa {
+    padding: 20px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.H1-Principal-QuintaCapa {
+    color: #1F95A1;
+    font-size: 60px; /* Tamaño del texto */
+    text-align: left; /* Alineación del texto */
+    margin-left: 70px;
+    margin-top: 70px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.P-Principal-QuintaCapa {
+    color: black;
+    font-size: 27px; /* Tamaño del texto */
+    text-align: left; /* Alineación del texto */
+    margin-left: 70px;
+    margin-top: 30px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.MiniCont-PrimerCuadro-QuintaCapa {
+    background-color: #4EC8A4;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    margin-left: 100px;
+    margin-top: 40px;
+    width: 500px;
+    text-align: left;
+}
+
+.SubCont-Img-H1-PrimerCuadro {
+    display: flex;
+}
+
+.Img-PrimerCuadro-QuintaCapa {
+    width: 100px; /* Ancho de la imagen */
+    height: 100px; /* Altura de la imagen */
+    border-radius: 50%; /* Esto hace que la imagen tenga bordes redondeados, con un radio del 50% del tamaño de la imagen */
+}
+
+.H1-PrimerCuadro-QuintaCapa {
+    color: white;
+    font-size: 30px; /* Tamaño del texto */
+    text-align: left; /* Alineación del texto */
+    margin-left: 20px;
+    margin-top: 10px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.P-PrimerCuadro-QuintaCapa {
+    color: white;
+    font-size: 15px; /* Tamaño del texto */
+    text-align: left; /* Alineación del texto */
+    margin-left: 120px;
+    margin-top: -25px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.MiniCont-SegundoCuadro-QuintaCapa {
+    background-color: #02B1A9;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    margin-left: 100px;
+    margin-top: 40px;
+    width: 500px;
+    text-align: left;
+}
+
+.SubCont-Img-H1-SegundoCuadro {
+    display: flex;
+}
+
+.Img-SegundoCuadro-QuintaCapa {
+    width: 100px; /* Ancho de la imagen */
+    height: 100px; /* Altura de la imagen */
+    border-radius: 50%; /* Esto hace que la imagen tenga bordes redondeados, con un radio del 50% del tamaño de la imagen */
+}
+
+.H1-SegundoCuadro-QuintaCapa {
+    color: white;
+    font-size: 30px; /* Tamaño del texto */
+    text-align: left; /* Alineación del texto */
+    margin-left: 20px;
+    margin-top: 10px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.P-SegundoCuadro-QuintaCapa {
+    color: white;
+    font-size: 15px; /* Tamaño del texto */
+    text-align: left; /* Alineación del texto */
+    margin-left: 120px;
+    margin-top: -25px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.MiniCont-TercerCuadro-QuintaCapa {
+    background-color: #1F95A1;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    margin-left: 100px;
+    margin-top: 40px;
+    width: 500px;
+    text-align: left;
+}
+
+.SubCont-Img-H1-TercerCuadro {
+    display: flex;
+}
+
+.Img-TercerCuadro-QuintaCapa {
+    width: 100px; /* Ancho de la imagen */
+    height: 100px; /* Altura de la imagen */
+    border-radius: 50%; /* Esto hace que la imagen tenga bordes redondeados, con un radio del 50% del tamaño de la imagen */
+}
+
+.H1-TercerCuadro-QuintaCapa {
+    color: white;
+    font-size: 30px; /* Tamaño del texto */
+    text-align: left; /* Alineación del texto */
+    margin-left: 20px;
+    margin-top: 10px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.P-TercerCuadro-QuintaCapa {
+    color: white;
+    font-size: 15px; /* Tamaño del texto */
+    text-align: left; /* Alineación del texto */
+    margin-left: 120px;
+    margin-top: -25px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.MiniCont-CuartoCuadro-QuintaCapa {
+    background-color: #02B1A9;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    margin-left: 100px;
+    margin-top: 40px;
+    width: 500px;
+    text-align: left;
+}
+
+.SubCont-Img-H1-CuartoCuadro {
+    display: flex;
+}
+
+.Img-CuartoCuadro-QuintaCapa {
+    width: 100px; /* Ancho de la imagen */
+    height: 100px; /* Altura de la imagen */
+    border-radius: 50%; /* Esto hace que la imagen tenga bordes redondeados, con un radio del 50% del tamaño de la imagen */
+}
+
+.H1-CuartoCuadro-QuintaCapa {
+    color: white;
+    font-size: 30px; /* Tamaño del texto */
+    text-align: left; /* Alineación del texto */
+    margin-left: 20px;
+    margin-top: 10px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.P-CuartoCuadro-QuintaCapa {
+    color: white;
+    font-size: 15px; /* Tamaño del texto */
+    text-align: left; /* Alineación del texto */
+    margin-left: 120px;
+    margin-top: -25px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.MiniCont-QuintoCuadro-QuintaCapa {
+    background-color: #1F95A1;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    margin-left: 100px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 500px;
+    text-align: left;
+}
+
+
+.SubCont-Img-H1-QuintoCuadro {
+    display: flex;
+}
+
+.Img-QuintoCuadro-QuintaCapa {
+    width: 100px; /* Ancho de la imagen */
+    height: 100px; /* Altura de la imagen */
+    border-radius: 50%; /* Esto hace que la imagen tenga bordes redondeados, con un radio del 50% del tamaño de la imagen */
+}
+
+.H1-QuintoCuadro-QuintaCapa {
+    color: white;
+    font-size: 30px; /* Tamaño del texto */
+    text-align: left; /* Alineación del texto */
+    margin-left: 20px;
+    margin-top: 10px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.P-QuintoCuadro-QuintaCapa {
+    color: white;
+    font-size: 15px; /* Tamaño del texto */
+    text-align: left; /* Alineación del texto */
+    margin-left: 120px;
+    margin-top: -25px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+}
+
+.SubCont-Quinta-Capa-Parte-Derecha {
+}
+
+.Img-ParteDerecha-QuintaCapa {
+    width: 70%; /* Ancho de la imagen */
+    height: 80%; /* Altura de la imagen */
+    margin: 5%;
+}
+
+.Cont-General-Sexta-Capa {
+    background-color: #02B1A9;
+    text-align: center;
+    height: 2550px;
+}
+
+.SubCont-TituloGeneral-SextaCapa {
+    padding: 10px; /* Espacio interior del texto */
+    text-align: center;
+}
+
+.H1-TituloGeneral-SextaCapa {
+    color: white; /* Color del texto */
+    font-size: 60px; /* Tamaño del texto */
+    font-weight: bold; /* Peso de la fuente */
+    padding: 10px; /* Espacio interior del texto */
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+    margin-top: 50px;
+    margin-left: -550px;
+}
+
+.Sub-Cont-PrimerCuadro-Sexta-Capa {
+    width: 700px; /* Ancho del cuadro */
+    border: 2px solid white; /* Borde blanco */
+    border-radius: 10px;
+    background-color: white;
+    margin-left: 610px;
+    margin-top: 10px;
+}
+
+
+.H1-PrimerCuadro-SextaCapa {
+    background-color: white; /* Fondo blanco para el título */
+    padding: 20px; /* Relleno alrededor del título */
+    text-align: left;
+    font-size: 38px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+    font-weight: bold; /* Peso de la fuente */
+}
+
+.P-PrimerCuadro-SextaCapa {
+    padding: 20px; /* Relleno alrededor de la descripción */
+    background-color: #02B1A9;
+    margin-bottom: 0px;
+    text-align: left;
+    font-size: 24px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+    color: black;
+}
+
+.Sub-Cont-SegundoCuadro-Sexta-Capa {
+    width: 700px; /* Ancho del cuadro */
+    border: 2px solid white; /* Borde blanco */
+    border-radius: 10px;
+    background-color: white;
+    margin-left: 610px;
+    margin-top: 50px;
+}
+
+.H1-SegundoCuadro-SextaCapa {
+    background-color: white; /* Fondo blanco para el título */
+    padding: 20px; /* Relleno alrededor del título */
+    text-align: left;
+    font-size: 38px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+    font-weight: bold; /* Peso de la fuente */
+}
+
+.P-SegundoCuadro-SextaCapa {
+    padding: 20px; /* Relleno alrededor de la descripción */
+    background-color: #02B1A9;
+    margin-bottom: 0px;
+    text-align: left;
+    font-size: 24px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+    color: black;
+}
+
+.Sub-Cont-TercerCuadro-Sexta-Capa {
+    width: 700px; /* Ancho del cuadro */
+    border: 2px solid white; /* Borde blanco */
+    border-radius: 10px;
+    background-color: white;
+    margin-left: 610px;
+    margin-top: 50px;
+}
+
+.H1-TercerCuadro-SextaCapa {
+    background-color: white; /* Fondo blanco para el título */
+    padding: 20px; /* Relleno alrededor del título */
+    text-align: left;
+    font-size: 38px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+    font-weight: bold; /* Peso de la fuente */
+}
+
+.P-TercerCuadro-SextaCapa {
+    padding: 20px; /* Relleno alrededor de la descripción */
+    background-color: #02B1A9;
+    margin-bottom: 0px;
+    text-align: left;
+    font-size: 24px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+    color: black;
+}
+
+.Sub-Cont-CuartoCuadro-Sexta-Capa {
+    width: 700px; /* Ancho del cuadro */
+    border: 2px solid white; /* Borde blanco */
+    border-radius: 10px;
+    background-color: white;
+    margin-left: 610px;
+    margin-top: 50px;
+}
+
+.H1-CuartoCuadro-SextaCapa {
+    background-color: white; /* Fondo blanco para el título */
+    padding: 20px; /* Relleno alrededor del título */
+    text-align: left;
+    font-size: 38px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+    font-weight: bold; /* Peso de la fuente */
+}
+
+.P-CuartoCuadro-SextaCapa {
+    padding: 20px; /* Relleno alrededor de la descripción */
+    background-color: #02B1A9;
+    margin-bottom: 0px;
+    text-align: left;
+    font-size: 24px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+    color: black;
+}
+
+.Sub-Cont-QuintoCuadro-Sexta-Capa {
+    width: 700px; /* Ancho del cuadro */
+    border: 2px solid white; /* Borde blanco */
+    border-radius: 10px;
+    background-color: white;
+    margin-left: 610px;
+    margin-top: 50px;
+}
+
+.H1-QuintoCuadro-SextaCapa {
+    background-color: white; /* Fondo blanco para el título */
+    padding: 20px; /* Relleno alrededor del título */
+    text-align: left;
+    font-size: 38px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+    font-weight: bold; /* Peso de la fuente */
+}
+
+.P-QuintoCuadro-SextaCapa {
+    padding: 20px; /* Relleno alrededor de la descripción */
+    background-color: #02B1A9;
+    margin-bottom: 0px;
+    text-align: left;
+    font-size: 24px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+    color: black;
+}
+
+.Cont-General-Septima-Capa {
+    background-color: #4EC8A4;
+    text-align: center;
+    height: 800px;
+}
+
+.SubCont-TituloGeneral-Septima {
+    padding: 10px; /* Espacio interior del texto */
+    text-align: center;
+}
+
+.H1-TituloGeneral-SeptimaCapa {
+    color: #4EC8A4; /* Color del texto */
+    font-size: 60px; /* Tamaño del texto */
+    font-weight: bold; /* Peso de la fuente */
+    padding: 10px; /* Espacio interior del texto */
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+    margin-top: 50px;
+    margin-left: -550px;
+}
+
+.Sub-Cont-PrimerCuadro-Septima-Capa {
+    width: 700px; /* Ancho del cuadro */
+    height: 400px;
+    border: 2px solid white; /* Borde blanco */
+    background-color: white;
+    margin-left: 610px;
+    margin-top: 10px;
+}
+
+.H1-PrimerCuadro-SeptimaCapa {
+    color: #02B1A9;
+    text-align: center;
+    font-weight: bold;
+    font-size: 38px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+    font-weight: bold; /* Peso de la fuente */
+    margin-top: 80px;
+}
+
+.Btn-Cuadro-SeptimaCapa {
+    background-color: #1F95A1;
+    color: white;
+    padding: 30px 80px;
+    border: none;
+    border-radius: 10px;
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.Cont-General-Octava-Capa {
+    background-color: white;
+    text-align: center;
+    height: 700px;
+}
+
+.SubCont-TituloGeneral-OctavaCapa {
+    padding: 10px; /* Espacio interior del texto */
+    text-align: center;
+}
+
+.H1-TituloGeneral-OctavaCapa {
+    color: #1F95A1; /* Color del texto */
+    font-size: 70px; /* Tamaño del texto */
+    font-weight: bold; /* Peso de la fuente */
+    padding: 10px; /* Espacio interior del texto */
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+    font-weight: bold;
+    margin-top: 70px;
+}
+
+.SubCont-SocialMedias-OctavaCapa {
+    color: black; /* Color del texto */
+    font-size: 20px; /* Tamaño del texto */
+    font-weight: bold; /* Peso de la fuente */
+    padding: 15px; /* Espacio interior del texto */
+    font-family: Montserrat, sans-serif; /* Tipo de fuente predeterminado */
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.MiniCont-Facebook {
+    margin-top: -40px;
+}
+
+.MiniCont-Instagram {
+    margin-top: 50px;
+}
+
+.MiniCont-Twitter {
+    margin-top: 50px;
+}
+
+footer {
+    background-color: #4EC8A4;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left, .right {
+    display: flex;
+    align-items: center;
+}
+
+    .left nav ul {
+        list-style-type: none;
+    }
+
+        .left nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+            .left nav ul li a, .right {
+                color: black;
+                text-decoration: none;
+            }
+
+.download-buttons {
+    margin-left: 10px;
+}
+
+.Img-AppStore-Footer {
+    width: 100px;
+    height: 30px;
+    margin-left: 20px;
+}

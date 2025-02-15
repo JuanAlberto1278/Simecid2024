@@ -1,0 +1,261 @@
+﻿@page
+@model WebApp.Pages.PrescriptionManagmentModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <title>SimecidApp</title>
+    <link href="~/css/prescriptionmanagment.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/controlactions.js"></script>
+
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
+    <script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.5/css/dataTables.dataTables.css" />
+    <script src="https://cdn.datatables.net/2.0.5/js/dataTables.js"></script>
+</head>
+
+<!------- SIDEBAR ------>
+<div class="sidebar">
+    <!------- Logo y titulo ------>
+    <div class="containerLogo">
+        <img src="~/Assets/LogoSIMECID.png" class="logoMini" />
+    </div>
+    <!------- Icono y nombre del usuario, e icono de settings------>
+    <div class="containerUser">
+        <!--Boton para ver el perfil de usuario (no es lo mismo que gestion de users)-->
+        <form asp-page="/UserProfile">
+            <button class="buttonUser">
+                <img src="~/assets/defaultpictureprofile.png" class="userIcon" />
+                <div class="fontTitle userName">Profile</div>
+            </button>
+        </form>
+        <!--Boton para ir a los settings-->
+        <form asp-page="/AdminSettings">
+            <button class="buttonSettings">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-gear-fill settingsIcon" viewBox="0 0 16 16">
+                    <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+                </svg>
+            </button>
+        </form>
+    </div>
+
+    <div class="MainMenu">
+        <form asp-page="/AppointmentManager">
+            <button class="buttonMenu" id="appointmentsMenuId">Appointments</button>
+        </form>
+        <form asp-page="/ServiceManagment">
+            <button class="buttonMenu" id="servicesMenuId">Services</button>
+        </form>
+        <form asp-page="/BranchManagment">
+            <button class="buttonMenu" id="branchesMenuId">Branches</button>
+        </form>
+        <form asp-page="/UserManagement">
+            <button class="buttonMenu" id="">Users</button>
+        </form>
+        <form asp-page="/">
+            <button class="buttonMenu" id="paymentMenuId">Payment</button>
+        </form>
+        <form asp-page="/ExaminationManagment">
+            <button class="buttonMenu" id="examinationMenuId">Examination</button>
+        </form>
+        <form asp-page="/PrescriptionManagment">
+            <button class="buttonMenu" id="prescriptionsMenuId">Prescriptions</button>
+        </form>
+        <form asp-page="/MedicalReportManagment">
+            <button class="buttonMenu" id="medicalReportMenuId">Medical Report</button>
+        </form>
+        <div class="sidebarFooter">2024 Codecrafters All Right Reserved to </div>
+    </div>
+
+</div>
+
+
+<!--CONTENIDO PRINCIPAL-->
+<body class="main-content">
+    <div class="profileHeader">
+    </div>
+
+    <div class="gestionDePerfilDeUsuario" style="margin-top:5%">
+        <h1 style="margin-left:10%" class="fontTitle">Patient Details</h1>
+
+        <!--Aca tabla service history tabla-->
+        <div class="row" style="margin-left: 15%; margin-right:5%">
+            <div class="col-lg-12">
+                <table id="tblUserInfo" class="table table-hover display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Last Name</th>
+                            <th>PhoneNumber</th>
+                            <th>Email</th>
+                            <th>Gender</th>
+                            <th>Province</th>
+                            <th>Address</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="gestionDePerfilDeUsuario" style="margin-top:5%">
+        <h1 style="margin-left:10%" class="fontTitle">Prescription History</h1>
+        <p style="margin-left:10%" class="UserDetails">Appointment details</p>
+
+        <!--Aca tabla service history tabla-->
+        <div class="row" style="margin-left: 15%; margin-right:5%">
+            <div class="col-lg-12">
+                <table id="tblPrescriptions" class="table table-hover display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Prescription Id</th>
+                            <th>Patient Id</th>
+                            <th>Doctor Id</th>
+                            <th>Prescription Name</th>
+                            <th>Medication Name</th>
+                            <th>Prescription Date</th>
+                            <th>Recommendations</th>
+                            <th>Uploaded file</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    @*     <div class="gestionDePerfilDeUsuario">
+    <form class="form-container">
+    <h1 class="fontTitle">Patient Details</h1>
+    <div class="sign-up-form">
+    <label for="name">Name</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+    </div>
+
+    <div class="sign-up-form">
+    <label for="lastName">Last Name</label><br>
+    <input type="text" id="lastName" name="lastName" required><br><br>
+    </div>
+    </form>
+    </div> *@
+
+    <div class="gestionDePerfilDeUsuario" style="margin-top:5%">
+        <h1 style="margin-left:10%" class="fontTitle">Doctor Details</h1>
+
+        <!--Aca tabla service history tabla-->
+        <div class="row" style="margin-left: 15%; margin-right:5%">
+            <div class="col-lg-12">
+                <table id="tblDoctorInfo" class="table table-hover" class="display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Last Name</th>
+                            <th>PhoneNumber</th>
+                            <th>Email</th>
+                            <th>Gender</th>
+                            <th>Branch Id</th>
+                            <th>Specialty</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    @* <div class="gestionDePerfilDeUsuario">
+    <form class="form-container">
+    <h1 class="fontTitle">Doctor Details</h1>
+    <div class="sign-up-form">
+    <label for="name">Name</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+    </div>
+
+    <div class="sign-up-form">
+    <label for="lastName">Last Name</label><br>
+    <input type="text" id="lastName" name="lastName" required><br><br>
+    </div>
+
+    <div class="sign-up-form">
+    <label for="branchBelong">Branch to which they belong</label><br>
+    <input type="text" id="" name="branchBelong" required><br><br>
+    </div>
+    </form>
+    </div> *@
+
+    <div class="gestionDePerfilDeUsuario">
+        <form id="uploadForm" class="form-container" enctype="multipart/form-data">
+            <h1 class="fontTitle">Prescription parameters</h1>
+            <div class="sign-up-form">
+                <label class="birthdate" for="textId">Prescription Id</label>
+                <input type="number" id="txtId" name="textId" required /><br /><br />
+            </div>
+            <div class="sign-up-form">
+                <label class="birthdate" for="prescriptionName">Prescription Name</label><br>
+                <input type="text" id="prescriptionName" name="prescriptionName" required><br><br>
+            </div>
+            <div class="sign-up-form">
+                <label for="medicationName">Medication name</label><br>
+                <input type="text" id="medicationName" name="medicationName" required><br><br>
+            </div>
+
+            <div class="sign-up-form">
+                <label class="birthdate" for="date">Date</label><br>
+                <input type="date" id="prescriptionDate" name="date" required><br><br>
+            </div>
+            <div class="sign-up-form">
+                <label for="recommendations">Recommendations</label><br>
+                <textarea id="recommendations" name="recommendations" required></textarea><br><br>
+            </div>
+
+            <div class="sign-up-form">
+
+                <label for="medicationName">Patient Id</label><br>
+                <input type="text" id="patientId" name="patientId" required><br><br>
+            </div>
+
+            <div class="sign-up-form">
+                <label for="medicationName">Doctor Id</label><br>
+                <input type="text" id="doctorId" name="doctorId" required><br><br>
+
+            </div>
+
+            <div class="sign-up-form">
+                <label for="file">Photo</label><br>
+                <input name="file" type="file" id="profileImage" accept="image/*">
+            </div>
+
+            <div style="display:flex">
+                <button class="btn" type="submit" id="btnCreate" style="margin-top: 6%">Create</button>
+                <button class="btn" type="submit" id="btnUpdate" style="margin-top: 6%">Update</button>
+                <button class="btn" type="submit" id="btnDelete" style="margin-top: 6%">Delete</button>
+            </div>
+        </form>
+    </div>
+
+   @*  <div class="gestionDePerfilDeUsuario" style="margin-top: -70px;">
+        <form class="form-container">
+            <p class="UserDetails">History Uploaded Files</p>
+        </form>
+    </div> *@
+
+    <script src="~/js/imagesaveprescription.js"></script>
+    <script src="~/js/pages/prescriptionmanager.js"></script>
+</body>
+</html>

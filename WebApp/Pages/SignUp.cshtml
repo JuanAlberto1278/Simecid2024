@@ -1,0 +1,139 @@
+﻿@page
+@model WebApp.Pages.SignUpModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="~/css/sign-up.css" rel="stylesheet" />
+    <script src="~/js/signup.js"></script>
+    <script src="~/js/controlactions.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <title>SimecidApp</title>
+</head>
+<body>
+    <div class="container">
+        <div class="split left">
+            <footer>
+                <p>&copy; 2024 CodeCrafters. All rights reserved.</p>
+            </footer>
+        </div>
+
+        <div class="split right">
+            <span class="topSignUp">
+                <img src="/Assets/logo-white.png" />
+                <h1>SIMECID</h1>
+            </span>
+            <h2 style="margin-bottom:20px ;padding: 0">Create new account</h2>
+            @*  <form method="post" enctype="multipart/form-data" action="/SignUp/UploadFile">
+
+            <button class="btn" type="submit" style="margin-left: 350px;">submit button</button>
+            </form> *@
+
+            <form id="uploadForm" class="form-container" enctype="multipart/form-data">
+                <div class="sign-up-form">
+                    <label for="name">Name</label><br>
+                    <input type="text" id="txtName" name="name" required><br><br>
+
+                </div>
+
+                <div class="sign-up-form" id="signInForm">
+                    <label for="lastName">Last Name</label><br>
+                    <input type="text" id="txtLastName" name="lastName" required><br><br>
+                </div>
+
+                <div class="sign-up-form">
+                    <label for="phoneNumber">Phone Number</label><br>
+                    <input type="number" id="txtPhoneNumber" name="phoneNumber" required><br><br>
+                </div>
+
+                <div class="sign-up-form">
+                    <label for="email">Email</label><br>
+                    <input type="email" id="txtEmail" name="email" required><br><br>
+                </div>
+
+                <div class="sign-up-form">
+                    <label for="password">Password</label><br>
+                    <input type="password" id="txtPassword" name="password" required><br><br>
+                    <span style="margin-left:-3%" class="toggle-password" onclick="togglePasswordVisibility()">
+                        <i class="fas fa-eye" id="eyeIcon"></i>
+                    </span>
+                </div>
+
+                <div class="sign-up-form">
+                    <label for="sex">Gender</label><br>
+                    <select class="classinput" id="txtSex" name="sex" style="width: 30vw; height: 3vh;" required>
+                        <option value="" disabled selected hidden>Select your gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                        <option value="ratherNot">Rather not to say</option>
+                    </select><br><br>
+                </div>
+
+                <div class="sign-up-form">
+                    <label for="birthdate">Birth Date</label><br>
+                    <input class="password" type="date" id="txtBirthdate" name="txtBirthdate" required><br><br>
+                </div>
+
+                <div class="sign-up-form">
+                    <label for="province">Province</label><br>
+                    <select class="provinceSelect" id="txtProvince" name="province" style="width: 30vw; height: 3vh;" required>
+                        <option value="" disabled selected hidden>Select your province</option>
+                        <option value="San José">San José</option>
+                        <option value="Alajuela">Alajuela</option>
+                        <option value="Heredia">Heredia</option>
+                        <option value="Cartago">Cartago</option>
+                        <option value="Puntarenas">Puntarenas</option>
+                        <option value="Guanacaste">Guanacaste</option>
+                        <option value="Limón">Limón</option>
+                    </select><br><br>
+                </div>
+
+                <div class="sign-up-form">
+                    <label for="address">Address</label><br>
+                    <textarea class="classinput" id="txtAddress" name="address" required></textarea><br><br>
+                </div>
+                <div class="sign-up-form">
+                    <label for="file">Photo</label><br>
+                    <input name="file" type="file" id="profileImage" accept="image/*">
+                </div>
+
+                <button class="btn" id="BtnSignIn" type="submit" style="margin-left: 350px;">Create Account</button>
+
+                @* <a class="btn" style="margin-left: 350px;" asp-area="" asp-page="/CodeVerification">Create Account</a> *@
+            </form>
+
+        </div>
+    </div>
+	<script src="~/js/imagesavesignup.js"></script>
+
+    <script>
+        // Función para mostrar u ocultar la contraseña
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("txtPassword");
+            var eyeIcon = document.getElementById("eyeIcon");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                eyeIcon.classList.remove("fa-eye");
+                eyeIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordInput.type = "password";
+                eyeIcon.classList.remove("fa-eye-slash");
+                eyeIcon.classList.add("fa-eye");
+            }
+        }
+    </script>
+</body>
+</html>

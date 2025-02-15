@@ -1,0 +1,321 @@
+
+
+/* ---- CLASES GENERALES ---*/
+
+:root {
+    --greenMain-SideBar: #02b1a9; /* Fondo del sidebar */
+    --whiteBackground: #ffffff; /* Fondo */
+    --colorText: #333; /* Texto normal */
+    --colorTextLight: #666; /* texto más claro */
+    --colorLightGrey: #efefef; /* gris claro para distinguir del blanco */
+    --greenLight1: #4ec8a4; /* Turqueza claro*/
+    --greenMedium2: #2fa5a5; /* Turqueza medio */
+    --greenDark3: #1f95a1; /* Turqueza Oscuro */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* para darle color a los titulos */
+h1 {
+    color: var(--greenMedium2);
+}
+
+/* para darle color a los textos */
+p {
+    color: var(--colorText);
+    line-height: 1.6;
+}
+
+/* para darle formato a los titulos */
+.fontTitle {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600; /* Utiliza el peso 600 para semi-bold */
+    line-height: 1.2;
+}
+
+/* para darle formato a los textos */
+.fontText {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400; /* Utiliza el peso 600 para regular */
+    line-height: 1.2;
+}
+
+/* ----CLASES PARA EL SIDEBAR------- */
+.sidebar {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 20%;
+    height: 100%;
+    background: var(--greenMain-SideBar);
+}
+
+/*Contenedor del logo y el título */
+.containerLogo {
+    width: 99%;
+    display: flex;
+    align-items: center;
+    background-color: var(--whiteBackground);
+    border: 2px solid #02B1A9;
+}
+
+/* Estilos para el logo mini */
+.logoMini {
+    width: 40%;
+    margin: 2%;
+}
+
+/*Contenedor del boton del icono y nombre del usuario, e icono de settings*/
+.buttonUser {
+    display: flex;
+    margin-top: 1%;
+    padding: 10%;
+    text-align: left;
+    color: var(--whiteBackground);
+    background-color: var(--greenMain-SideBar);
+    border: 2px solid var(--greenMain-SideBar); /* Aunque no se vea, No se debe borrar el borde, porque cambia los padding y entonces las cosas se mueven */
+    border-radius: 5px;
+}
+
+    .buttonUser:hover {
+        border: 2px solid var(--whiteBackground); /* Agrega un borde al botón en el hover */
+    }
+
+.containerUser {
+    padding: 2%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between; /* Para alinear los elementos en los extremos */
+    align-items: center;
+}
+
+.userIcon {
+    width: 10px;
+    height: 10px;
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 50%;
+    overflow: hidden; /* Asegura que cualquier contenido adicional esté oculto dentro del círculo */
+}
+
+.userName {
+    color: var(--whiteBackground);
+    margin: 15% 5% 5% 5%;
+    font-size: 2vh;
+}
+
+.buttonSettings {
+    display: flex;
+    margin: 2%;
+    color: var(--whiteBackground);
+    background-color: var(--greenMain-SideBar);
+    border: none;
+    border: 2px solid var(--greenMain-SideBar); /* Aunque no se vea, No se debe borrar el borde, porque cambia los padding y entonces las cosas se mueven */
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left:16px;
+}
+
+    .buttonSettings:hover {
+        border: 2px solid var(--whiteBackground); /* Agrega un borde al botón en el hover */
+    }
+
+.settingsIcon {
+    color: var(--whiteBackground);
+    width: 4vw;
+    height: 4vh;
+}
+
+/*Menu del sidebar*/
+.MainMenu {
+    padding: 2%;
+}
+
+.buttonMenu {
+    font-family: "Montserrat", sans-serif;
+    display: block;
+    padding: 5%;
+    font-size: 2vh;
+    text-decoration: none;
+    color: var(--whiteBackground);
+    background-color: var(--greenMain-SideBar);
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 2px solid var(--greenMain-SideBar); /* Aunque no se vea, No se debe borrar el borde, porque cambia los padding y entonces las cosas se mueven */
+    transition: border 0.2s;
+}
+
+    .buttonMenu:hover {
+        border: 2px solid var(--whiteBackground); /* Agrega un borde al botón en el hover */
+    }
+
+.sidebarFooter {
+    position: center;
+    padding: 10%;
+    font-size: 12px;
+    color: white;
+}
+
+/*------ CLASES PARA EL CONTENIDO PRINCIPAL -----*/
+
+.main-content {
+    width: 100%;
+}
+
+.container1 {
+    margin-left: 50%;
+    margin-top: 5%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Otros estilos según tus preferencias */
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    /* Otros estilos según tus preferencias */
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    border-radius: 10px; /* Ajusta este valor según tu preferencia */
+    overflow: hidden;
+    margin-left: -10%;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid var(--whiteBackground);
+}
+
+th {
+    background-color: var(--greenMain-SideBar);
+    color: var(--whiteBackground);
+}
+
+.table-active,
+.table-primary,
+.table-secondary,
+.table-success,
+.table-danger,
+.table-warning,
+.table-info,
+.table-light,
+.table-dark {
+    background-color: rgba(255, 255, 255, 0.075);
+}
+
+
+.profileHeader {
+    background-image: url('../assets/simecidheader2.png');
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el encabezado */
+    background-position: bottom;
+    text-align: center;
+    height: 30vh; /* Ajusta la altura del encabezado según sea necesario */
+}
+
+
+.profilePic {
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%; /* Esto hace que la imagen sea un círculo */
+    overflow: hidden; /* Asegura que cualquier contenido adicional esté oculto dentro del círculo */
+    margin-top: 20vh;
+    margin-left: 20%;
+}
+
+.gestionDePerfilDeUsuario {
+    text-align: center;
+    padding-left: 18%;
+}
+
+.form-container {
+    max-width: 100%;
+    margin: 10% 35%;
+}
+
+.sign-up-form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 3%;
+    text-align: right;
+    font-family: "Montserrat", sans-serif;
+}
+
+    .sign-up-form label {
+        justify-self: start;
+        width: 50%;
+        min-width: 50px;
+        margin-bottom: 2%;
+        margin-right: 10%;
+        text-align: right;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .sign-up-form input,
+    .sign-up-form textarea {
+        width: 100%;
+        min-width: 50px;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+
+.birthdate {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+}
+
+.sign-up-form select {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+}
+
+.buttonContainer {
+    max-width: 100%;
+    margin-top: 10%;
+}
+
+.btn {
+    width: 40%;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    padding: 2% 4%;
+    background-color: #02B1A9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: "Montserrat", sans-serif;
+}
+
+    .btn:hover {
+        background-color: var(--greenLight1);
+    }
+
+
+
+  
+ .classDisplayFlex{
+
+     display: flex;
+
+ }

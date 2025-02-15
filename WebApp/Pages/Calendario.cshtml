@@ -1,0 +1,53 @@
+﻿@page
+@model CalendarioModel
+@{
+}
+
+<head>
+    <title>Calendario</title>
+   @*  <link type="text/css" rel="stylesheet" href="themes/calendar_green.css" />
+    <link type="text/css" rel="stylesheet" href="themes/calendar_traditional.css" />
+    <link type="text/css" rel="stylesheet" href="themes/calendar_transparent.css" /> *@
+    <link type="text/css" rel="stylesheet" href="themes/calendar_white.css" />
+    <link href="~/css/stylesheetcalendar.css" rel="stylesheet" />
+    <link href="~/css/appointmentsmanager.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="class= wrapper">
+        <h2>Make your Appointments</h2>
+        <h3>Select your location and preferred services</h3>
+        <div style="align-content containerAppointments">
+            <form>
+                <h2 class="branchesTitle">Branches</h2>
+                <select>
+                    <option>Test</option>
+                </select>
+                <h2 class="servicesTitle">Services</h2>
+                <select>
+                    <option>Test</option>
+                </select>
+            </form>
+        </div>
+        <div style="display: flex ">
+            <div style="margin-right: 10px;">
+                <div id="nav"></div>
+            </div>
+            <div style="flex-grow: 1;">
+               @*  <div class="toolbar">
+                    Theme:
+                    <select id="theme">
+                        <option value="calendar_default">Default</option>
+                        <option value="calendar_white" selected>White</option>
+                        <option value="calendar_green">Green</option>
+                        <option value="calendar_traditional">Traditional</option>
+                        <option value="calendar_transparent">Transparent</option>
+                    </select>
+                </div> *@
+                <div id="dp"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/daypilot/daypilot-all.min.js" asp-append-version="true"></script>
+    <script src="~/js/pages/calendario.js"></script>
+</body>
